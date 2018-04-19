@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<title>Biology</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('https://vanmierlostichting.d66.nl/content/uploads/sites/296/2017/05/dnastr.jpg');
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("https://www.helsinki.fi/sites/default/files/styles/8_3_large/public/plantbiology.jpg?itok=r3R-823n&timestamp=1481533410");
+    min-height: 300px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("https://www.helsinki.fi/sites/default/files/styles/8_3_large/public/plantbiology.jpg?itok=r3R-823n&timestamp=1481533410");
+    min-height: 300px;
+}
+
+/* Fourth image (Contact) */
+.bgimg-4 {
+    background-image: url("https://www.helsinki.fi/sites/default/files/styles/8_3_large/public/plantbiology.jpg?itok=r3R-823n&timestamp=1481533410");
+    min-height: 300px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4d004d;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+
+.topright {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 18px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*Slideshow*/
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  background-color: rgba(0,0,0,0.4);
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  background-color: rgba(0,0,0,0.4);
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/*Comparison Image*/
+.img-comp-container {
+  position: relative;
+  height: 200px; /*should be the same height as the images*/
+}
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+/*Button*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+/*Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 7px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/*Searchbar in Navigation*/
+.sidenav input[type=text] {
+    padding: 6px;
+    border-radius: 10px;
+    margin-left:10px;
+    margin-top: 8px;
+    font-size: 17px;
+    background: #555;
+}
+
+/*Table*/
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#Paper1 {background-color:red;}
+#Paper2 {background-color:green;}
+
+
+/*Curriculum*/
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content1 {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+/*Table*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+</style>
+<body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+  <center><img src="http://www.clker.com/cliparts/s/N/A/4/g/x/super-j-hi.png" alt="Logo" width="120" height="90"></center>
+  <br>
+  <a href="#">Home</a>
+  <a href="#">Maths</a>
+  <a href="#">Geography</a>
+  <a href="#">ICT</a>
+  <a href="#">Religious Studies</a>
+  <a href="#">French</a>
+  <a href="https://output.jsbin.com/jahever">Biology</a>
+  <a href="https://output.jsbin.com/sezewin">Chemistry</a>
+  <a href="https://output.jsbin.com/kujiyet">Physics</a>
+  <a href="#">English Lit</a>
+  <a href="#">English Lang</a>
+  <a href="https://output.jsbin.com/wenogiw">To Do List</a>
+</div>
+<div id="Main">
+<div id="Navbar">
+  <span style="padding-left:20px ;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <span class="w3-hide-small">Menu</span></span>
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div> 
+</div>
+</div>
+<div id="Navbar">
+  <div class="topright">
+  <span class="w3-hide-small"><a href="#####"><img  src="http://www.clker.com/cliparts/s/N/A/4/g/x/super-j-hi.png" alt="Logo" width="120" height="100"></span>
+  </a>
+  </div>
+</div>
+</div>
+
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">BIOLOGY</span>
+  </div>
+  <div class="w3-display-bottommiddle">
+ 	<a href="#about"><h3>Click the arrow to explore</h3><br></a>
+  </div>
+</div>
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">COUNTDOWN</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+<h3 class="w3-center">Biology Exams</h3>
+<div id="Paper1" class="tabcontent">
+  <h3>15th May 2018</h3>
+  <p id="bio1"></p>
+</div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate1 = new Date("May 15, 2018 08:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate1 - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("bio1").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("bio1").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
+<div id="Paper2" class="tabcontent">
+  <h3>11th June 2018</h3>
+  <p id="bio2"></p>
+</div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jun 11, 2018 12:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("bio2").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("bio2").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
+<button class="tablink" onclick="openCity('Paper1', this, 'red')" id="defaultOpen">Paper 1</button>
+<button class="tablink" onclick="openCity('Paper2', this, 'green')">Paper 2</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CURRICULUM</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <button class="collapsible">1	Cells and Organisation</button>
+<div class="content1">
+  <ul>
+  <li>B1	Cell Structure and transport</li>
+  <li>B2	Cell division</li>
+  <li>B3	Organisation and the digestive system</li>
+  <li>B4	Organising animals and plants</li>
+  </ul>
+</div>
+
+<button class="collapsible">2	Disease and bioenergetics</button>
+<div class="content1">
+  <ul>
+  <li>B5	Health and disease</li>
+  <li>B6	Preventing and treating disease</li>
+  <li>B7	Non-Communicable diseases</li>
+  <li>B8	Photosynthesis</li>
+  <li>B9	Respiration</li>
+  </ul>
+</div>
+
+<button class="collapsible">3	Biological responses</button>
+<div class="content1">
+  <ul>
+  <li>B10	The human nervous system</li>
+  <li>B11	Hormonal Coordination</li>
+  <li>B12	Homeostasis in action</li>
+  </ul>
+</div>
+
+<button class="collapsible">4	Genetics and reproduction</button>
+<div class="content1">
+  <ul>
+  <li>B13	Reproduction</li>
+  <li>B14	Variation and evolution</li>
+  <li>B15	Genetics and evolution</li>
+  </ul>
+</div>
+
+<button class="collapsible">5	Ecology</button>
+<div class="content1">
+  <ul>
+  <li>B16	Adaptations, interdependence, and competition</li>
+  <li>B17	Organising an ecosystem</li>
+  <li>B18	Biodiversity and ecosystems</li>
+  </ul>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
+}
+</script>
+</div>
+
+<!--Fourth-->
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">HELPFUL LINKS</span>
+  </div>
+</div>
+
+<!-- Four -->
+<div class="w3-content w3-container w3-padding-64" id="four">
+<table>
+  <tr>
+    <th>Sites</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+  </tr>
+  <tr>
+    <td>Adam</td>
+  </tr>
+</table>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+ 
+
+<script>
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll and add button
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("Navbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    	document.getElementById("myBtn").style.display = "block";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        document.getElementById("myBtn").style.display = "none";
+    }
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("Navbar").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("Navbar").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+}
+
+</script>
+
+</body>
+</html>
